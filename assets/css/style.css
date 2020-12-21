@@ -1,0 +1,136 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: blaak;
+    src: url("../fonts/blaak/BlaakRegular_PERSONAL.ttf");
+}
+
+nav {
+    height: 6.5rem;
+    background-color: #fff;
+}
+h1 {
+    font-family: blaak, sans-serif;
+    color: #4CAF50;
+    font-size: 92px;
+}
+
+.btn-success {
+    background-color: #4CAF50;
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: .5rem 5rem !important;
+}
+
+.header {
+    background-image: url("../img/bg.jpg");
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 15rem;
+    padding-bottom: 570px;
+}
+.order {
+    height: auto;
+    background-color: #ebf4ed;
+}
+.big-header {
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.register-form {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 7%;
+}
+
+.form-group input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid grey;
+}
+.form-group input:focus {
+    box-shadow: none;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+}
+.order_form {
+    padding-top: 60px;
+}
+.order_form input {
+    background-color: transparent;
+}
+.input-group-append {
+    margin-left: 30px;
+}
+.input-group-text {
+    padding: .5rem 2rem;
+    background-color: #fff;
+    border: none;
+    border-top-left-radius: .25rem !important;
+    border-bottom-left-radius: .25rem !important;
+}
+.input-group {
+    margin-bottom: 40px;
+}
+.add_more_div {
+    margin-bottom: 50px;
+}
+.add_more {
+    margin-bottom: 25px;
+}
+.add_more a {
+    margin-left: -20px;
+    color: #000000;
+    font-weight: 600;
+}
+.form-inline {
+    float: right;
+}
+.form-inline input {
+    margin-left: 1rem;
+}
+.total {
+    padding-right: 0;
+}
+.service_input {
+    background-color: #fff;
+    border: none;
+}
+#basic-addon2 {
+    width: 80px;
+    background-color: #fff;
+    border: none;
+    padding: 0;
+}
+.table .thead-dark th {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+/* Media queries */
+
+@media (max-width: 411px) {
+    h1 {
+        font-size: 4rem;
+    }
+    .big-header {
+        padding-top: 0;
+    }
+    .form-inline {
+        float: left;
+        margin-left: -20px;
+    }
+    .form-inline input {
+        margin-left: 0;
+    }
+}

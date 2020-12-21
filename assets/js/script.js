@@ -40,16 +40,26 @@ $(document).ready(function(){
            let td_id = document.createElement('td');
            let td_item = document.createElement('td');
            let td_amount = document.createElement('td');
+           let td_action = document.createElement('td');
 
-           let getId = document.createTextNode(key);
+           let getId = document.createTextNode(key+1);
            let getItem = document.createTextNode(item.item);
            let getAmout = document.createTextNode(item.amount);
+
+           let i_class = document.createElement('p');
+        //    i_class.classList.add("fa");
+        //    i_class.classList.add("fa-trash");
+           let getAction = document.createTextNode('i_class');
         //    console.log(get);
-           td_id.appendChild(get);
+           td_id.appendChild(getId);
            td_item.appendChild(getItem);
            td_amount.appendChild(getAmout);
+           td_action.appendChild(getAction);
+
+           tr.appendChild(td_id);
            tr.appendChild(td_item);
            tr.appendChild(td_amount);
+           tr.appendChild(td_action);
 
            $(tbody).append(tr);
         });

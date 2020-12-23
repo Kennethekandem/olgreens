@@ -91,21 +91,21 @@ $(document).ready(function(){
         }
     })
 
-});
-
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        
-        reader.onload = function (e) {
-            $('#payment_image').attr('src', e.target.result);
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#payment_image').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
         }
-        
-        reader.readAsDataURL(input.files[0]);
     }
-}
+    
+    $("#imgInp").change(function(){
+        $('#payment_image').css("display", "block");
+        readURL(this);
+    });
 
-$("#imgInp").change(function(){
-    $('#payment_image').css("display", "block");
-    readURL(this);
 });

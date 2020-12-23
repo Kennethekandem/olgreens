@@ -83,6 +83,14 @@ $(document).ready(function(){
     let sum = array.map(item => item.amount).reduce((prev, next) => prev + next);
     $('.total_footer').text('₦' + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
+    // Enable 
+    $('.confirm_payment').on('click', () => {
+
+        if($('#imgInp').val() != '') {
+            $('.proceed').removeAttr("disabled");
+        }
+    })
+
 });
 
 function readURL(input) {

@@ -69,7 +69,7 @@
 
                 <div class="form-group">
                     <button class="btn btn-success confirm_list" data-toggle="modal" data-target="#exampleModal">Confirm List</button>
-                    <button class="btn btn-success" disabled>Proceed to payment</button>
+                    <button class="btn btn-success proceed" disabled>Make Order</button>
                 </div>
         </div>
     </div>
@@ -99,8 +99,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary confirm_payment" data-dismiss="modal">Confirm Payment</button>
       </div>
     </div>
   </div>

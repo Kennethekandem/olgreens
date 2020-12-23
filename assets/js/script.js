@@ -81,6 +81,6 @@ $(document).ready(function(){
     })
 
     let sum = array.reduce((a,b) => ( a.amount + b.amount));
-    $('.total_footer').text('₦' + sum);
+    $('.total_footer').text('₦' + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
 });

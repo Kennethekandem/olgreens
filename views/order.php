@@ -58,6 +58,15 @@
                     </div>
                 </div>
 
+                <!-- <div class="row">
+                    <div class="col-lg-6 col-12 add_more">
+                        <input type="file" class="btn btn-success add_item" />
+                    </div>
+                    <div class="col-lg-6 col-12 text-right">
+                        <p class="text-danger">Note: Hello</p>
+                    </div>
+                </div> -->
+
                 <div class="form-group">
                     <button class="btn btn-success confirm_list" data-toggle="modal" data-target="#exampleModal">Confirm List</button>
                     <button class="btn btn-success" disabled>Proceed to payment</button>
@@ -79,6 +88,15 @@
         <h4>Make payment to this account number</h4>
 
         <p class="text-green"><b>0273558780 Olgreens</b></p>
+
+        <div class="row">
+            <div class="col-lg-12 col-12 add_more">
+                <input type="file" class="btn btn-success" id="imgInp" />
+            </div>
+            <div class="col-lg-12 col-12 justify_content_center">
+                <img id="payment_image" src="" alt="your image" />
+            </div>
+        </div>
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

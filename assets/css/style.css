@@ -130,6 +130,9 @@ tfoot {
     background-color: #4CAF50;
     color: #fff;
 }
+#payment_image {
+    display: none;
+}
 
 /* Media queries */
 

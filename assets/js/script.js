@@ -79,8 +79,25 @@ $(document).ready(function(){
         localStorage.setItem('items', JSON.stringify(array));
         location.reload(true);
     })
-    
+
     let sum = array.map(item => item.amount).reduce((prev, next) => prev + next);
     $('.total_footer').text('₦' + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
+});
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#payment_image').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInp").change(function(){
+    $('#payment_image').css("display", "block");
+    readURL(this);
 });

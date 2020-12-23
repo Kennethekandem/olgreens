@@ -80,4 +80,7 @@ $(document).ready(function(){
         location.reload(true);
     })
 
+    let sum = array.reduce((a,b) => ( a.amount + b.amount));
+    $('.total_footer').text('₦' + sum);
+
 });

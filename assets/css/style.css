@@ -13,10 +13,16 @@ nav {
     height: 6.5rem;
     background-color: #fff;
 }
-h1 {
+h1, h4 {
     font-family: blaak, sans-serif;
     color: #4CAF50;
+    
+}
+h1 {
     font-size: 92px;
+}
+.text-green {
+    color: #4CAF50;
 }
 
 .btn-success {
@@ -119,6 +125,10 @@ h1 {
 .fa-trash:hover {
     /* cursor: grab; */
     color: red;
+}
+tfoot {
+    background-color: #4CAF50;
+    color: #fff;
 }
 
 /* Media queries */

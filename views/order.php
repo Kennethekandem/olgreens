@@ -48,14 +48,43 @@
                             </thead>
                             <tbody id="items">
                             </tbody>
+                            <tfoot>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Total: <span class="total_footer"></span></td>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-success confirm_list">Confirm List</button>
+                    <button class="btn btn-success confirm_list" data-toggle="modal" data-target="#exampleModal">Confirm List</button>
                     <button class="btn btn-success" disabled>Proceed to payment</button>
                 </div>
         </div>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalLabel">Make Payment</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <h4>Make payment to this account number</h4>
+
+        <p class="text-green"><b>0273558780 Olgreens</b></p>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 </section>

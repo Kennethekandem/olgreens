@@ -116,6 +116,10 @@ h1 {
     background-color: #4CAF50;
     border-color: #4CAF50;
 }
+.fa-trash:hover {
+    /* cursor: grab; */
+    color: red;
+}
 
 /* Media queries */
 

@@ -47,12 +47,6 @@
                                 </tr>
                             </thead>
                             <tbody id="items">
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>₦1000</td>
-                                <td><i class="fa fa-trash"></i></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>

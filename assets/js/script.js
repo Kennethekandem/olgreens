@@ -27,14 +27,14 @@ $(document).ready(function(){
     let complete = $('.confirm_list');
     let tbody = $('#items');
 
-    let array = [];
+   
     let getItems = localStorage.getItem('items');
+    let array = getItems ? JSON.parse(getItems) : [];
+
 
     if(getItems) {
-        array.push(JSON.parse(getItems));
-        
 
-        array[0].forEach((item, key) => {
+        array.forEach((item, key) => {
            let tr = document.createElement('tr');
 
            let td_id = document.createElement('td');
@@ -46,15 +46,13 @@ $(document).ready(function(){
            let getItem = document.createTextNode(item.item);
            let getAmout = document.createTextNode(item.amount);
 
-           let i_class = document.createElement('p');
-        //    i_class.classList.add("fa");
-        //    i_class.classList.add("fa-trash");
-           let getAction = document.createTextNode('i_class');
-        //    console.log(get);
+           let i_class = document.createElement('i');
+           i_class.className = 'fa fa-trash';
+
            td_id.appendChild(getId);
            td_item.appendChild(getItem);
            td_amount.appendChild(getAmout);
-           td_action.appendChild(getAction);
+           td_action.appendChild(i_class);
 
            tr.appendChild(td_id);
            tr.appendChild(td_item);
@@ -62,10 +60,13 @@ $(document).ready(function(){
            tr.appendChild(td_action);
 
            $(tbody).append(tr);
-        });
 
-        // console.log(tr);
-        // tbody.appendChild(tr);
+           $(i_class).on('click', () => {
+               array.splice(key, 1);
+               localStorage.setItem('items', JSON.stringify(array));
+               location.reload(true);
+           });
+        });
     }
 
     $('.add_item').on('click', (e) => {
@@ -76,6 +77,7 @@ $(document).ready(function(){
         array.push({ item, amount: parseInt(amount) });
 
         localStorage.setItem('items', JSON.stringify(array));
+        location.reload(true);
     })
 
 });

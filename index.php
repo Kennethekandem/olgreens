@@ -2,10 +2,10 @@
 session_start();
 ob_start();
 error_reporting(E_ALL);
-// require("config/Db.class.php");
+require("config/Db.class.php");
 
 // Creates the instance
-// $db = new Db();
+$db = new Db();
 
 
 spl_autoload_register( function($class) {

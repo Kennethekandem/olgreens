@@ -1,8 +1,19 @@
 <?php
+
+require("config/Db.class.php");
+
+
+// Creates the instance
+$db = new Db();
+
 header("Access-Control-Allow-Headers: *");
 
-$_POST = json_decode(array_keys($_POST), true);
+$data = json_decode(file_get_contents("php://input"), TRUE);
 
-return $_POST;
+
+foreach($data as $arr) {
+    $item = $arr['item'];
+    $amount = $arr['amount'];
+}
 
 ?>

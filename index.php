@@ -67,7 +67,7 @@ foreach($routes as $route)
 Now, $routes will contain all the routes. $routes[0] will correspond to first route. For e.g. in above example $routes[0] is search, $routes[1] is book and $routes[2] is fitzgerald
 */
 
-$pages = array("home", "order");
+$pages = array("home", "order", "mail");
 
 if ($routes[1] != '') {
 

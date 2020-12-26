@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     var maxField = 10; //Input fields increment limitation
     var addButton = $('.addmore_link'); //Add button selector
     var wrapper = $('.inputs'); //Input field wrapper
@@ -27,11 +28,12 @@ $(document).ready(function(){
     let complete = $('.confirm_list');
     let tbody = $('#items');
 
-   
+   // Get items from localstorage
     let getItems = localStorage.getItem('items');
     let array = getItems ? JSON.parse(getItems) : [];
 
 
+    // Display items
     if(getItems) {
 
         array.forEach((item, key) => {
@@ -61,6 +63,7 @@ $(document).ready(function(){
 
            $(tbody).append(tr);
 
+           // Remove item from order table
            $(i_class).on('click', () => {
                array.splice(key, 1);
                localStorage.setItem('items', JSON.stringify(array));
@@ -69,6 +72,7 @@ $(document).ready(function(){
         });
     }
 
+    // Add item to order list
     $('.add_item').on('click', (e) => {
         e.preventDefault();
         let item = item_input.val();
@@ -80,10 +84,11 @@ $(document).ready(function(){
         location.reload(true);
     })
 
+    // Sum the amount from items
     let sum = array.map(item => item.amount).reduce((prev, next) => prev + next);
     $('.total_footer').text('₦' + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
-    // Enable 
+    // Enable complete order button
     $('.confirm_payment').on('click', () => {
 
         if($('#imgInp').val() != '') {
@@ -91,6 +96,7 @@ $(document).ready(function(){
         }
     })
 
+    // Display input image in order payment modal
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -107,5 +113,16 @@ $(document).ready(function(){
         $('#payment_image').css("display", "block");
         readURL(this);
     });
+
+    // Make order
+
+    $('.proceed').on('click', () => {
+
+        axios.post('complete.php', array).then((response) => {
+            console.log(response.data);
+        }).catch((error) => {
+            console.log(error);
+        })
+    })
 
 });

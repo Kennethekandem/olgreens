@@ -26,7 +26,7 @@ class config {
     }
 
     public static function email() {
-        return "lilkezyo2@gmail.com";
+        return "lilkenzy02@gmail.com";
     }
 
     public static function name() {

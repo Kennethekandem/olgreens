@@ -118,7 +118,7 @@ $(document).ready(function(){
 
     $('.proceed').on('click', () => {
 
-        axios.post('complete.php', array).then((response) => {
+        axios.post('views/complete.php', array).then((response) => {
             console.log(response);
         }).catch((error) => {
             console.log(error);

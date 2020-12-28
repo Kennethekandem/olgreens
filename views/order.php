@@ -69,6 +69,8 @@
 
                 <div class="form-group">
                     <button class="btn btn-success confirm_list" data-toggle="modal" data-target="#exampleModal">Confirm List</button>
+                    <?php
+                    ?>
                     <button class="btn btn-success proceed" disabled>Make Order</button>
                 </div>
         </div>

@@ -21,14 +21,18 @@ header("Access-Control-Allow-Headers: *");
 $data = json_decode(file_get_contents("php://input"), TRUE);
 
 
-foreach($data as $arr) {
-    $item = $arr['item'];
-    $amount = $arr['amount'];
+// foreach($data as $arr) {
+//     $item = $arr['item'];
+//     $amount = $arr['amount'];
 
     
-}
+// }
 
-// $from 
+$from = $_SESSION['email'];
+$sender = $_SESSION['name'];
+$to = config::email();
+$subject = 'New Order';
+$msg = $data;
 
 mail::send($from, $sender, $to, $subject, $msg);
 

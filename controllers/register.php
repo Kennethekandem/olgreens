@@ -9,6 +9,6 @@ class register {
         $_SESSION['location'] = $location;
         $_SESSION['phone'] = $phone;
 
-        header("locaton:order");
+        header('Location:order');
     }
 }

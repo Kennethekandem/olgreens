@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-success btn-lg btn-block" type="submit" name="register">Place an order <i class="fa fa-close"></i></button>
+                        <button class="btn btn-success btn-lg btn-block" type="submit" name="register">Place an order</button>
                     </div>
                 </form>
             </div>

@@ -8,7 +8,12 @@ class mail {
     public static function send($from, $sender, $to, $subject, $msg) {
 
         $yr = date('Y');
-        $message = '<!DOCTYPE HTML>
+
+        foreach($msg as $m) {
+            
+        }
+
+        $message .= '<!DOCTYPE HTML>
 <html>
 
 <style type="text/css">
@@ -98,21 +103,47 @@ class mail {
                     <!--header END-->
 
                     <!--content 1 -->
-                    <tr><td align="center" bgcolor="#ffffff">
+                    <tr><td bgcolor="#ffffff">
                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
-                                <tr><td align="center">
+                                <tr><td>
                                         <!-- padding --><div style="height: 50px; line-height: 100px; font-size: 10px;">&nbsp;</div>
 
                                     </td></tr>
-                                <tr><td align="center">
-                                        <table width="80%" align="center" border="0" cellspacing="0" cellpadding="0">
-                                            <tr><td align="center">
-                                                    <div style="line-height: 24px;">
+                                <tr><td">
+                                        <table width="80%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr><td>
+                                            <div style="line-height: 24px;">
                                                         <font face="Arial, Helvetica, sans-serif" size="4" color="#57697e" style="font-size: 16px;">
-                                                            <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; text-align: center;">
-                                                                '.$msg.'
+                                                            <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; margin-bottom: 35px;">
+                                                                <p>Thank you for ordering with Olgreens, below is your list of orders,</p>
                                                             </div></font>
                                                     </div>
+                                                    <table cellspacing=100" cellpadding="30" border="2">
+                                                        <thead style="background-color: #4CAF50; color: #fff;">
+                                                            <td class="order_td">No.</td>
+                                                            <td class="order_td">Item</td>
+                                                            <td class="order_td">Amount</td>
+                                                        </thead>
+                                                        <tbody>
+                                                            ';
+                                                                
+                                                                foreach($msg as $key => $m) {
+                                                                    $item = $m['item'];
+                                                                    $amount = $m['amount'];
+
+                                                                    $message .= '<tr>
+                                                                    <td class="order_td">'.$key.'</td>
+                                                                    <td class="order_td">'.$item.'</td>
+                                                                    <td class="order_td">'.$amount.'</td>
+                                                                    </tr>';
+                                                                }
+
+                                                                $message .= '
+                                                                <tr style="background-color: #4CAF50; color: #fff;">
+                                                            <td colspan="3">Order Total: 3000</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </td></tr>
                                         </table>
                                         <!-- padding --><div style="height: 45px; line-height: 45px; font-size: 10px;">&nbsp;</div>

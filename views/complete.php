@@ -24,11 +24,15 @@ spl_autoload_register( function($class) {
 
 $from = $_SESSION['email'];
 $sender = $_SESSION['name'];
-$to = 'lilkenzy02@gmail.com';
+$to = 'info@shopolgreens.com';
 $subject = 'New Order';
 $msg = $data;
 
 $yr = date('Y');
+
+        foreach($msg as $m) {
+            
+        }
 
         $message = '<!DOCTYPE HTML>
 <html>
@@ -104,7 +108,7 @@ $yr = date('Y');
                                                             <tr><td align="left" valign="top" class="mob_center">
                                                                     <a href="#" target="_blank" style="color: #596167; font-family: Arial, Helvetica, sans-serif; font-size: 13px;">
                                                                         <font face="Arial, Helvetica, sans-seri; font-size: 13px;" size="3" color="#596167">
-                                                                            <img src="https://ctifund.biz/assets/img/logo.svg" style="height: 70px !important" alt="Logo" border="0" style="display: block;" /></font></a>
+                                                                            <img src="https://shopolgreens.com/assets/logo.png" style="height: 70px !important" alt="Logo" border="0" style="display: block;" /></font></a>
                                                                 </td></tr>
                                                         </table>
                                                     </td></tr>
@@ -132,7 +136,7 @@ $yr = date('Y');
                                             <div style="line-height: 24px;">
                                                         <font face="Arial, Helvetica, sans-serif" size="4" color="#57697e" style="font-size: 16px;">
                                                             <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; margin-bottom: 35px;">
-                                                                <p>Thank you for ordering with Olgreens, below is your list of orders,</p>
+                                                                <p>Below is the list of orders,</p>
                                                             </div></font>
                                                     </div>
                                                     <table cellspacing=100" cellpadding="30" border="2">
@@ -142,11 +146,20 @@ $yr = date('Y');
                                                             <td class="order_td">Amount</td>
                                                         </thead>
                                                         <tbody>
-                                                        <tr>
-                                                                    <td class="order_td">1</td>
-                                                                    <td class="order_td">Afang</td>
-                                                                    <td class="order_td">3000</td>
-                                                                    </tr>
+                                                            ';
+                                                                
+                                                                foreach($msg as $key => $m) {
+                                                                    $item = $m['item'];
+                                                                    $amount = $m['amount'];
+
+                                                                    $message .= '<tr>
+                                                                    <td class="order_td">'.$key.'</td>
+                                                                    <td class="order_td">'.$item.'</td>
+                                                                    <td class="order_td">'.$amount.'</td>
+                                                                    </tr>';
+                                                                }
+
+                                                                $message .= '
                                                                 <tr style="background-color: #4CAF50; color: #fff;">
                                                             <td colspan="3">Order Total: 3000</td>
                                                             </tr>

@@ -70,6 +70,8 @@ $(document).ready(function(){
                location.reload(true);
            });
         });
+    }else {
+        $('.table').hide();
     }
 
     // Add item to order list
@@ -119,7 +121,15 @@ $(document).ready(function(){
     $('.proceed').on('click', () => {
 
         axios.post('views/complete.php', array).then((response) => {
+            localStorage.removeItem("items");
+            swal({
+                title: 'Order made',
+                type: 'success',
+                confirmButtonColor: '#4CAF55',
+                confirmButtonText: 'Okay'
+              });
             console.log(response);
+
         }).catch((error) => {
             console.log(error);
         })

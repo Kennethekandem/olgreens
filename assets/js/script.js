@@ -110,6 +110,19 @@ $(document).ready(function(){
     let sum = array.map(item => item.amount).reduce((prev, next) => prev + next);
     $('.total_footer').text('₦' + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
+    $('.confirm_list').on('click', () => {
+        if(sum < 1000) {
+            swal({
+                title: 'Minimum amount is 1000',
+                type: 'warning',
+                showCancelButton: true,
+                showConfirmButton: false
+            });
+            return false;
+        }
+    })
+
+
     // Enable complete order button
     $('.confirm_payment').on('click', () => {
 

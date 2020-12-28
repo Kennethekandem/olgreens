@@ -28,6 +28,11 @@ $to = 'info@shopolgreens.com';
 $subject = 'New Order';
 $msg = $data;
 
+$sum = array_reduce($data->intervalStats, function($i, $obj)
+{
+    return $i += $obj->amount;
+});
+
 $yr = date('Y');
 
         foreach($msg as $m) {
@@ -161,7 +166,7 @@ $yr = date('Y');
 
                                                                 $message .= '
                                                                 <tr style="background-color: #4CAF50; color: #fff;">
-                                                            <td colspan="3">Order Total: 3000</td>
+                                                            <td colspan="3">Order Total: ₦'.number_format($sum).'</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>

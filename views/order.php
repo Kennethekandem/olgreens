@@ -9,9 +9,9 @@
                 <div class="inputs">
                     <div class="form-group input-group">
                         <label for="exampleFormControlInput1" class="sr-only">Item</label>
-                        <input type="text" class="form-control item_input" name="item[]" id="exampleFormControlInput1">
+                        <input type="text" class="form-control item_input" id="exampleFormControlInput1" required>
                         <div class="input-group-append">
-                            <input type="number" class="input-group-text item_price" placeholder="₦" id="basic-addon2" />
+                            <input type="number" class="input-group-text item_price" placeholder="₦" id="basic-addon2" required />
                         </div>
                     </div>
                     

@@ -80,6 +80,26 @@ $(document).ready(function(){
         let item = item_input.val();
         let amount = item_price.val();
 
+        if(item == '') {
+            swal({
+                title: 'The item field is required',
+                type: 'warning',
+                showCancelButton: true,
+                showConfirmButton: false
+            });
+            return false;
+        }
+
+        if(amount == '') {
+            swal({
+                title: 'The amount field is required',
+                type: 'warning',
+                showCancelButton: true,
+                showConfirmButton: false
+            });
+            return false;
+        }
+
         array.push({ item, amount: parseInt(amount) });
 
         localStorage.setItem('items', JSON.stringify(array));
@@ -122,12 +142,14 @@ $(document).ready(function(){
 
         axios.post('views/complete.php', array).then((response) => {
             localStorage.removeItem("items");
+            location.reload();
             swal({
                 title: 'Order made',
                 type: 'success',
                 confirmButtonColor: '#4CAF55',
                 confirmButtonText: 'Okay'
               });
+            
             console.log(response);
 
         }).catch((error) => {

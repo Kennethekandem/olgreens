@@ -51,6 +51,9 @@ class mail {
     a {
         color: #377dff;
     }
+    .order_td {
+        border: 1px solid #4b9c4e;
+    }
 </style>
 
 <body style="padding: 0px; margin: 0px;">
@@ -127,7 +130,7 @@ class mail {
                                 <tr><td align="center">
                                         <font face="Arial, Helvetica, sans-serif" size="3" color="#96a5b5" style="font-size: 13px;">
                         <span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #96a5b5;">
-                          '.$yr.' &copy; <a href="http://ctifund.biz/" target="_blank" style="text-decoration: none; color: #377dff;">CTIFUND</a>. ALL Rights Reserved.
+                          '.$yr.' &copy; <a href="http://shopolgreens.com" target="_blank" style="text-decoration: none; color: #377dff;">OLGREENS</a>. ALL Rights Reserved.
                         </span></font>
                                     </td></tr>
                             </table>

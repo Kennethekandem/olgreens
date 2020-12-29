@@ -124,12 +124,12 @@ $(document).ready(function(){
 
 
     // Enable complete order button
-    $('.confirm_payment').on('click', () => {
+    // $('.confirm_payment').on('click', () => {
 
-        if($('#imgInp').val() != '') {
-            $('.proceed').removeAttr("disabled");
-        }
-    })
+    //     if($('#imgInp').val() != '') {
+    //         $('.proceed').removeAttr("disabled");
+    //     }
+    // })
 
     // Display input image in order payment modal
     function readURL(input) {
@@ -162,8 +162,6 @@ $(document).ready(function(){
                 confirmButtonColor: '#4CAF55',
                 confirmButtonText: 'Okay'
               });
-            
-            console.log(response);
 
         }).catch((error) => {
             console.log(error);

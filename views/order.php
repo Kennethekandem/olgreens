@@ -71,7 +71,7 @@
                     <button class="btn btn-success confirm_list" data-toggle="modal" data-target="#exampleModal">Confirm List</button>
                     <?php
                     ?>
-                    <button class="btn btn-success proceed" disabled>Make Order</button>
+                    <button class="btn btn-success proceed" <?php if(isset($_SEESION['receipt'])) { echo ''; }else { echo 'disabled'; } ?> >Make Order</button>
                 </div>
         </div>
     </div>
@@ -86,24 +86,38 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
-        <h4>Make payment to this account number</h4>
+      <form action="" method="post" enctype="multipart/form-data">
 
-        <p class="text-green"><b>0273558780 Olgreens</b></p>
+        <?php
 
-        <div class="row">
-            <div class="col-lg-12 col-12 add_more">
-                <input type="file" class="btn btn-success" id="imgInp" />
-            </div>
-            <div class="col-lg-12 col-12 justify_content_center">
-                <img id="payment_image" src="" alt="your image" />
+        if(isset($_POST['upload'])) {
+            $image = $_FILES['receipt'];
+
+            $upload = upload::add($image, 'assets/uploads/', true);
+            $image = $upload['file'];
+
+            $_SESSION['receipt'] = $image;
+        }
+        ?>
+        <div class="modal-body text-center">
+            <h4>Make payment to this account number</h4>
+
+            <p class="text-green"><b>0273558780 Olgreens</b></p>
+
+            <div class="row">
+                <div class="col-lg-12 col-12 add_more">
+                    <input type="file" class="btn btn-success" name="receipt" id="imgInp" />
+                </div>
+                <div class="col-lg-12 col-12 justify_content_center" style="height: 300px;">
+                    <img id="payment_image" src="" style="height: inherit" alt="your image" />
+                </div>
             </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-        <button type="button" class="btn btn-primary confirm_payment" data-dismiss="modal">Confirm Payment</button>
-      </div>
+        <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-primary confirm_payment" name="upload">Confirm Payment</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

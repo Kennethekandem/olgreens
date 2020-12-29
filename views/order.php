@@ -71,7 +71,7 @@
                     <button class="btn btn-success confirm_list" data-toggle="modal" data-target="#exampleModal">Confirm List</button>
                     <?php
                     ?>
-                    <button class="btn btn-success proceed" <?php if(isset($_SEESION['receipt'])) { echo ''; }else { echo 'disabled'; } ?> >Make Order</button>
+                    <button class="btn btn-success proceed" <?php if(isset($_SESSION['receipt'])) { echo ''; }else { echo 'disabled'; } ?> >Make Order</button>
                 </div>
         </div>
     </div>

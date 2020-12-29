@@ -100,7 +100,13 @@
                                             <div style="line-height: 24px;">
                                                         <font face="Arial, Helvetica, sans-serif" size="4" color="#57697e" style="font-size: 16px;">
                                                             <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; margin-bottom: 35px;">
-                                                                '.$msg.'
+                                                            
+                                                                <p><b>Name</b>: '.$_SESSION['name'].'</p>
+                                                                <p><b>Email</b>: '.$_SESSION['email'].'</p>
+                                                                <p><b>Phone</b>: '.$_SESSION['phone'].'</p>
+                                                                <p><b>Location</b>: '.$_SESSION['location'].'</p><br>
+
+                                                                <p>Below is the list of orders</p>
                                                             </div></font>
                                                     </div>
                                             <table cellspacing=100" cellpadding="30" border="2">

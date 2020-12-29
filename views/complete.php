@@ -27,11 +27,13 @@ $sender = $_SESSION['name'];
 $to = 'info@shopolgreens.com';
 $subject = 'New Order';
 $msg = $data;
+$url = 'https://shopolgreens.com/assets/uploads/' . $_SESSION['receipt'];
 
-$sum = array_reduce($data->intervalStats, function($i, $obj)
-{
-    return $i += $obj->amount;
-});
+$sum = 0;
+foreach($data as $key=>$value){
+  if(isset($value->amount))
+     $sum += $value->amount;
+}
 
 $yr = date('Y');
 
@@ -141,7 +143,12 @@ $yr = date('Y');
                                             <div style="line-height: 24px;">
                                                         <font face="Arial, Helvetica, sans-serif" size="4" color="#57697e" style="font-size: 16px;">
                                                             <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; margin-bottom: 35px;">
-                                                                <p>Below is the list of orders,</p>
+                                                            <p><b>Name</b>: '.$_SESSION['name'].'</p>
+                                                            <p><b>Email</b>: '.$_SESSION['email'].'</p>
+                                                            <p><b>Phone</b>: '.$_SESSION['phone'].'</p>
+                                                            <p><b>Location</b>: '.$_SESSION['location'].'</p><br>
+
+                                                            <p>Below is the list of orders</p>
                                                             </div></font>
                                                     </div>
                                                     <table cellspacing=100" cellpadding="30" border="2">
@@ -170,6 +177,13 @@ $yr = date('Y');
                                                             </tr>
                                                         </tbody>
                                                     </table>
+                                                    <div style="line-height: 24px;">
+                                                        <font face="Arial, Helvetica, sans-serif" size="4" color="#57697e" style="font-size: 16px;">
+                                                            <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; margin-bottom: 35px;">
+                                                                <p>Below is the link to the receipt</p>
+                                                                <a href="'.$url.'">'.$url.'</a>
+                                                            </div></font>
+                                                    </div>
                                                 </td></tr>
                                         </table>
                                         <!-- padding --><div style="height: 45px; line-height: 45px; font-size: 10px;">&nbsp;</div>
@@ -217,6 +231,11 @@ $yr = date('Y');
                  $headers .= 'Reply-To: '.$sender.' <'.$from.'>' . "\r\n";
 //                 ini_set('sendmail_from','lilkenzy02@gmail.com');
                  if (mail($to, $subject, $message, $headers)) {
+                     unset($_SESSION['receipt']);
+                     unset($_SESSION['name']);
+                     unset($_SESSION['email']);
+                     unset($_SESSION['phone']);
+                     unset($_SESSION['location']);
                      return true;
                  }else {
                      return false;

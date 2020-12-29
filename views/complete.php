@@ -30,9 +30,9 @@ $msg = $data;
 $url = 'https://shopolgreens.com/assets/uploads/' . $_SESSION['receipt'];
 
 $sum = 0;
-foreach($data as $key=>$value){
-  if(isset($value->amount))
-     $sum += $value->amount;
+foreach($msg as $key=>$value){
+  if(isset($value['amount']))
+     $sum += $value['amount'];
 }
 
 $yr = date('Y');
@@ -180,7 +180,8 @@ $yr = date('Y');
                                                     <div style="line-height: 24px;">
                                                         <font face="Arial, Helvetica, sans-serif" size="4" color="#57697e" style="font-size: 16px;">
                                                             <div style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e; margin-padding: 50px; margin-bottom: 35px;">
-                                                                <p>Below is the link to the receipt</p>
+                                                                <br>
+                                                            <p>Below is the link to the receipt</p>
                                                                 <a href="'.$url.'">'.$url.'</a>
                                                             </div></font>
                                                     </div>
@@ -236,7 +237,9 @@ $yr = date('Y');
                      unset($_SESSION['email']);
                      unset($_SESSION['phone']);
                      unset($_SESSION['location']);
-                     return true;
+
+                     header("Location:home");
+
                  }else {
                      return false;
                  }

@@ -7,7 +7,6 @@
             <div class="col-12 col-lg-6 text-right">
                 <form class="register-form text-left" action="" method="post">
                     <?php
-                    echo $_SESSION['name'];
 
                         if(isset($_POST['register'])) {
                             register::add($_POST['name'], $_POST['email'], $_POST['location'], $_POST['phone']);

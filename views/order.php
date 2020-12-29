@@ -97,6 +97,7 @@
             $image = $upload['file'];
 
             $_SESSION['receipt'] = $image;
+            header("Refresh:0");
         }
         ?>
         <div class="modal-body text-center">

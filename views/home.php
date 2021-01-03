@@ -8,6 +8,11 @@
                 <form class="register-form text-left" action="" method="post">
                     <?php
 
+                        if(isset($_SESSION['message'])) {
+                            respond::alert('success', 'Order Successful', 'Your order has been made succesfully');
+                           
+                        }
+
                         if(isset($_POST['register'])) {
                             register::add($_POST['name'], $_POST['email'], $_POST['location'], $_POST['phone']);
                         }
@@ -16,19 +21,19 @@
                     <h3 class="mb-4">Welcome</h3>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="John Doe">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Location</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="location" placeholder="Location">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="location" placeholder="Location" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Phone</label>
-                        <input type="tel" class="form-control" id="exampleFormControlInput1" name="phone" placeholder="Phone number">
+                        <input type="tel" class="form-control" id="exampleFormControlInput1" name="phone" placeholder="Phone number" required>
                     </div>
 
                     <div class="form-group">

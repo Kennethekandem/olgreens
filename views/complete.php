@@ -28,6 +28,7 @@ $to = 'info@shopolgreens.com';
 $subject = 'New Order';
 $msg = $data;
 $url = 'https://shopolgreens.com/assets/uploads/' . $_SESSION['receipt'];
+$_SESSION['message'] = 'Order completed';
 
 $sum = 0;
 foreach($msg as $key=>$value){

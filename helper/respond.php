@@ -7,7 +7,7 @@ class respond {
 
     public static function alert($type, $title, $message) {
         ?>
-                                        <div class="alert alert-<?php echo $type; ?> alert-custom" style="text-align: center; margin-bottom: 20px; width: 100%;" >
+                                        <div class="alert alert-<?php echo $type; ?> alert-custom alert-dismissible" style="text-align: center; margin-bottom: 20px; width: 100%;" role="alert">
 
                                         <?php
                                         if ($title != "") {
@@ -22,6 +22,9 @@ class respond {
                                         	<?php
                                         }
                                         ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                         </div>
         <?php
     }

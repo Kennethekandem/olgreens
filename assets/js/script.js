@@ -155,13 +155,14 @@ $(document).ready(function(){
 
         axios.post('views/complete.php', array).then((response) => {
             localStorage.removeItem("items");
-            location.reload();
+            document.location.href="/";
+
             swal({
                 title: 'Order made',
                 type: 'success',
                 confirmButtonColor: '#4CAF55',
                 confirmButtonText: 'Okay'
-              });
+            });
 
         }).catch((error) => {
             console.log(error);
